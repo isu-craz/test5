@@ -1,0 +1,193 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+
+    border-radius: 0 0 3px 3px;
+    transition: background-color 0.3s ease;
+    /* Smooth background color change */
+
+
+
+}
+
+/*  nav bar */
+.nav-bar {
+    padding: 0 min(3em, 3%);
+    background-color: rgb(255, 255, 255);
+
+}
+
+nav {
+    width: 100%;
+    padding: 8px 0;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-section,
+.right-section {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.right-section {
+    width: 37vw;
+    min-width: 450px;
+    transition: min-width 0.3s ease;
+
+}
+
+.left-section div {
+    display: inline-flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.left-section svg {
+    margin-bottom: -2px;
+    margin-right: 3px;
+}
+
+.right-section div,
+.left-section div {
+    display: flex;
+    justify-content: right;
+    flex: 1;
+}
+
+.right-section div {
+    display: inline-flex;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: black;
+    padding: 6px 8px;
+    transition: text-decoration 0.15s ease;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.left-section a:hover svg {
+    fill: red;
+}
+
+
+/*  panel   section -------------------------------------   */
+
+.panel-section {
+    padding: 0 min(3em, 3%);
+}
+.panel {
+
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-side,
+.right-side {
+    flex: 0.3;
+}
+
+.left-side {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.right-side {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*  ---------------------   */
+.menu-icon {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.menu-icon:hover {
+    /*background-color: rgb(245, 245, 246);*/
+    background-color: rgb(245, 245, 245);
+}
+
+.brand-name {
+    font-size: clamp(35px, 2.5vw, 50px);
+    font-weight: 300;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.brand-name a {
+    text-decoration: none;
+    color: black;
+}
+
+.brand-name span {
+    font-size: clamp(0px, 0.7vw, 20px);
+    position: absolute;
+    top: clamp(0px, 0.3vw, 4px);
+    right: -0.6vw;
+}
+
+
+
+
+/*  responcive -------------------------------------   */
+
+
+@media(max-width: 1200px) {
+    .right-section {
+        min-width: 370px;
+    }
+}
+
+
+/*  normal max-width: 1024px    */
+@media(max-width: 1023px) {
+    nav {
+        display: none;
+    }
+
+    header {
+        height: 64px;
+    }
+
+    .brand-name {
+        font-size: clamp(24px, 4vw, 30px);
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .panel {
+        height: 64px;
+    }
+
+}
+
+@media(min-width: 1024px) {
+    .menu-icon {
+        display: none;
+    }
+
+}

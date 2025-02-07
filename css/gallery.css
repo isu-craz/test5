@@ -1,0 +1,459 @@
+.gallery-super-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 50px;
+}
+
+#gallery {
+    position: relative;
+    top: -80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.gallery-headline {
+    position: relative;
+    display: flex;
+    height: clamp(50px, 10vw, 150px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-headline .blind-tag {
+    position: absolute;
+    display: flex;
+    font-size: clamp(30px, 6vw, 100px);
+    font-family: "Montserrat", serif;
+    font-weight: 500;
+    color: rgba(10, 10, 10, 0.04);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-headline .sub-topic {
+    display: flex;
+    position: relative;
+    top: 20px;
+    font-size: clamp(26px, 2.2vw, 40px);
+    font-weight: 600;
+    text-align: center;
+}
+
+.gallery-headline .sub-topic-description {
+    color: rgb(140, 140, 140);
+    position: relative;
+    width: max(285px, 40vw);
+    top: 30px;
+    text-align: center;
+}
+
+
+
+
+
+
+.gallery-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    background-color: rgb(212, 210, 240);
+
+
+    z-index: 40;
+}
+
+.gallery-content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+/*          -------------------------------------------           */
+
+
+
+
+:root {
+    /* you have to change those var depend on your img width   (width + card_margin_bottom*2)  */
+
+    --card_width: 0px;
+    --card_width-for-cal: 0;
+
+    /*  default value   */
+    /*
+    --card_width: 314px;
+    --card_width-for-cal: 314;
+    */
+
+    /*  ------------    */
+    /* you have to change those var depend on your img height   (hight + card_margin_top*2)  */
+    --card_margin_up-down: 15px;
+    --card_margin_up-down_for-cal: 15;
+
+    --card_margin_left-right: 10px;
+    --card_margin_left-right_for-cal: 10;
+    /*  ------------    */
+
+    /*
+--card_margin_up-down_for-cal
+
+
+    (var(--card_width-for-cal) * 3 / 4) + (var(--card_margin_up-down_for-cal) * 2)
+    */
+
+    --card_4-3: calc((var(--card_width-for-cal) * 3 / 4) + (var(--card_margin_up-down_for-cal) * 2));
+    --card_16-9: calc((var(--card_width-for-cal) * 9 / 16) + (var(--card_margin_up-down_for-cal) * 2));
+    --card_1-1: calc((var(--card_width-for-cal) * 1 / 1) + (var(--card_margin_up-down_for-cal) * 2));
+
+    --card_9-16: calc((var(--card_width-for-cal) * 16 / 9) + (var(--card_margin_up-down_for-cal) * 2));
+    --card_2-3: calc((var(--card_width-for-cal) * 3 / 2) + (var(--card_margin_up-down_for-cal) * 2));
+    --card_3-4: calc((var(--card_width-for-cal) * 4 / 3) + (var(--card_margin_up-down_for-cal) * 2));
+
+    --card_21-9: calc((var(--card_width-for-cal) * 9 / 21) + (var(--card_margin_up-down_for-cal) * 2));
+    --card_2_35-1: calc((var(--card_width-for-cal) * 1 / 2.35) + (var(--card_margin_up-down_for-cal) * 2));
+
+    --card_3-2: calc((var(--card_width-for-cal) * 2 / 3) + (var(--card_margin_up-down_for-cal) * 2));
+    --card_5-4: calc((var(--card_width-for-cal) * 4 / 5) + (var(--card_margin_up-down_for-cal) * 2));
+
+    --card_1_85-1: calc((var(--card_width-for-cal) * 1 / 1.85) + (var(--card_margin_up-down_for-cal) * 2));
+    --card_4-5: calc((var(--card_width-for-cal) * 5 / 4) + (var(--card_margin_up-down_for-cal) * 2));
+
+
+
+
+    --card_border_radius: 16px;
+    --row_increment: 1px;
+
+}
+
+
+.pin_container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, calc(var(--card_width) + var(--card_margin_left-right) * 2));
+    grid-auto-rows: var(--row_increment);
+    justify-content: center;
+
+}
+
+.card {
+    padding: 0;
+    margin: var(--card_margin_up-down) var(--card_margin_left-right);
+    border-radius: var(--card_border_radius);
+
+    background-color: rgba(9, 28, 97, 0.725);
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.card_4-3 {
+    grid-row-end: span var(--card_4-3);
+}
+
+.card_16-9 {
+    grid-row-end: span var(--card_16-9);
+}
+
+.card_1-1 {
+    grid-row-end: span var(--card_1-1);
+}
+
+.card_9-16 {
+    grid-row-end: span var(--card_9-16);
+}
+
+.card_2-3 {
+    grid-row-end: span var(--card_2-3);
+}
+
+.card_3-4 {
+    grid-row-end: span var(--card_3-4);
+}
+
+.card_21-9 {
+    grid-row-end: span var(--card_21-9);
+}
+
+.card_2_35-1 {
+    grid-row-end: span var(--card_2_35-1);
+}
+
+.card_3-2 {
+    grid-row-end: span var(--card_3-2);
+}
+
+.card_5-4 {
+    grid-row-end: span var(--card_5-4);
+}
+
+.card_1_85-1 {
+    grid-row-end: span var(--card_1_85-1);
+}
+
+.card_4-5 {
+    grid-row-end: span var(--card_4-5);
+}
+
+
+
+.gallery-content .pin_container div {
+    z-index: 13;
+
+}
+.gallery-content .pin_container img {
+    display: block;
+
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 200px) {
+    :root {
+        --card_width: 80px;
+        --card_width-for-cal: 80;
+    }
+}
+
+@media (min-width: 300px) {
+    :root {
+        --card_width: 130px;
+        --card_width-for-cal: 130;
+    }
+}
+
+@media (min-width: 350px) {
+    :root {
+        --card_width: 155px;
+        --card_width-for-cal: 155;
+    }
+}
+
+@media (min-width: 400px) {
+    :root {
+        --card_width: 180px;
+        --card_width-for-cal: 180;
+    }
+}
+
+@media (min-width: 500px) {
+    :root {
+        --card_width: 230px;
+        --card_width-for-cal: 230;
+    }
+}
+
+@media (min-width: 600px) {
+    :root {
+        --card_width: 280px;
+        --card_width-for-cal: 280;
+    }
+}
+
+@media (min-width: 700px) {
+    :root {
+        --card_width: 213px;
+        --card_width-for-cal: 213;
+    }
+}
+
+@media (min-width: 800px) {
+    :root {
+        --card_width: 246px;
+        --card_width-for-cal: 246;
+    }
+}
+
+@media (min-width: 900px) {
+    :root {
+        --card_width: 280px;
+        --card_width-for-cal: 280;
+    }
+}
+
+@media (min-width: 1000px) {
+    :root {
+        --card_width: 230px;
+        --card_width-for-cal: 230;
+    }
+}
+
+@media (min-width: 1100px) {
+    :root {
+        --card_width: 255px;
+        --card_width-for-cal: 255;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --card_width: 280px;
+        --card_width-for-cal: 280;
+    }
+}
+
+@media (min-width: 1300px) {
+    :root {
+        --card_width: 240px;
+        --card_width-for-cal: 240;
+    }
+}
+
+@media (min-width: 1400px) {
+    :root {
+        --card_width: 260px;
+        --card_width-for-cal: 260;
+    }
+}
+
+@media (min-width: 1500px) {
+    :root {
+        --card_width: 280px;
+        --card_width-for-cal: 280;
+    }
+}
+
+@media (min-width: 1600px) {
+    :root {
+        --card_width: 300px;
+        --card_width-for-cal: 300;
+    }
+}
+
+@media (min-width: 1700px) {
+    :root {
+        --card_width: 263px;
+        --card_width-for-cal: 263;
+    }
+}
+
+@media (min-width: 1800px) {
+    :root {
+        --card_width: 280px;
+        --card_width-for-cal: 280;
+    }
+}
+
+@media (min-width: 1900px) {
+    :root {
+        --card_width: 300px;
+        --card_width-for-cal: 300;
+    }
+}
+
+
+
+
+/*          -------------------------------------------           */
+
+
+
+.gallery-mask-1,
+.gallery-mask-2 {
+    background-color: white;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    height: 15vh;
+    z-index: 50;
+}
+
+.gallery-mask-1 {
+    -webkit-mask-image: linear-gradient(white, transparent);
+    mask-image: linear-gradient(white, transparent);
+
+    top: -1px;
+}
+
+.gallery-mask-2 {
+    -webkit-mask-image: linear-gradient(transparent, white);
+    mask-image: linear-gradient(transparent, white);
+
+    bottom: -1px;
+}
+
+.gallery-mask-1 div,
+.gallery-mask-2 div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+    border-radius: 50%;
+    padding: 20px;
+    cursor: pointer;
+    transition: top 0.3s ease, bottom 0.3s ease;
+}
+
+.gallery-mask-1 div svg,
+.gallery-mask-2 div svg {
+    position: absolute;
+    fill: black;
+    width: 30px;
+    height: 30px;
+}
+
+.gallery-mask-1 div {
+    bottom: 0px;
+}
+
+.gallery-mask-2 div {
+    top: 0px;
+}
+
+.gallery-mask-1:hover div {
+    bottom: 7px;
+}
+
+.gallery-mask-2:hover div {
+    top: 7px;
+}
+
+
+
+@media(max-width: 1023px) {
+    #gallery {
+        top: -95px;
+    }
+}

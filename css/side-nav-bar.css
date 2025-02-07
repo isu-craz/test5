@@ -1,0 +1,256 @@
+.side-nav-bar-wrap {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}
+
+/*  ===================  header section  ===================    */
+.side-nav-bar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    left: -100%;
+    /*  left: -100%;    */
+    width: 400px;
+    top: 0;
+    overflow-y: auto;
+scroll-behavior: smooth;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    font-size: clamp(17px, 2.4vw, 20px);
+    z-index: 10000;
+    transition: left 0.3s ease;
+}
+
+.side-nav-bar .nav-header {
+    display: inline-flex;
+    min-height: 64px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    background-color: rgb(0, 0, 0);
+    z-index: 2;
+
+}
+
+.nav-header .brand-name-tag {
+    margin-left: 10px;
+    font-size: clamp(23.8px, 3.4vw, 28px);
+    font-weight: 300;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-header .brand-name-tag p {
+    text-decoration: none;
+    color: white;
+
+}
+
+.nav-header .brand-name-tag span {
+    font-size: 7px;
+    position: absolute;
+    top: 2px;
+    right: -7px;
+}
+
+.nav-header .right-to-nav-brand {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-header .close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.nav-header .close-btn:hover {
+    background-color: rgba(109, 109, 109, 0.414);
+}
+
+.nav-header .close-btn svg {
+    fill: rgba(255, 255, 255, 0.406);
+}
+
+/*  ===================  links  ===================    */
+
+.nav-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 10px;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: rgb(101, 122, 173);
+
+
+}
+
+.nav-content .cat-tag {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    padding: 20px 0;
+    padding-left: 5px;
+    cursor: pointer;
+    z-index: 2;
+    background-color: white;
+
+}
+
+.main-links:hover {
+    background-color: rgb(237, 255, 211);
+}
+
+.main-links div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    margin-left: 10px;
+    border-radius: 50%;
+    background-color: rgb(223, 220, 245);
+}
+
+.main-links div img {
+    width: 45px;
+}
+
+.main-links p {
+    padding: 5px 12px 5px 0;
+    margin-right: auto;
+    margin-left: 15px;
+}
+
+.main-links svg {
+    margin-right: 20px;
+    transition: transform 0.15s ease;
+}
+
+.main-links p:hover {
+    text-decoration: underline;
+}
+
+.sub-links {
+    background-color: rgb(240, 243, 255);
+    position: absolute;
+    top: -80%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.sub-links div:hover {
+    background-color: rgb(224, 230, 255);
+}
+
+.sub-links div {
+    padding: 10px;
+    padding-left: 35px;
+    border-style: dotted;
+    border-width: 0 0 0.5px 0;
+}
+
+
+
+/* Active state */
+.cat-tag.active .sub-links {
+    position: relative;
+
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.cat-tag.active .main-links svg {
+    transform: rotate(180deg);
+}
+
+
+
+
+/*  ===================  sub links  ===================    */
+
+.sub-nav-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0;
+    
+}
+
+.sub-nav-content .sec-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    background-color: white;
+    transition: background-color 0.4s ease;
+    cursor: pointer;
+}
+.sub-nav-content .sec-tag:hover {
+    background-color: rgb(240, 240, 240);
+
+}
+
+.sub-nav-content .sec-tag .sec-tag-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.sec-tag-icons svg {
+    width: 30px;
+    height: 30px;
+    fill: rgb(75, 75, 75);
+}
+
+.sub-nav-content .sec-tag .sec-tag-name {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-left: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgb(75, 75, 75);
+}
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 559px) {
+
+    .side-nav-bar {
+        width: 100%;
+    }
+}

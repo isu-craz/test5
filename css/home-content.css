@@ -1,0 +1,209 @@
+.home-content {
+    display: flex;
+    margin-top: -80px;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    padding: 30px min(3em, 3%);
+    /* want to change */
+    justify-content: center;
+    align-items: center;
+}
+/*  padding: 50px min(3em, 3%);    */
+.part {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 0 8px;
+    align-items: center;
+    
+}
+.part-content1,
+.part-content2,
+.part-content3 {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+/*
+.part-content1 {
+    background-color: rgba(223, 220, 245, 0.512);
+}
+.part-content2 {
+    background-color: rgba(245, 220, 227, 0.512);
+}
+.part-content3 {
+    background-color: rgba(220, 243, 245, 0.512);
+}
+*/
+
+.content-headline {
+    font-family: Arial;
+    letter-spacing: 0.5px;
+    word-spacing: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 7px;
+}
+
+.content-headline h1 {
+    cursor: pointer;
+}
+.content-headline h1:hover {
+    color: rgb(0, 0, 0);
+}
+.content-headline h1:hover span{
+    border-color: rgb(255, 61, 61);
+}
+.content-headline span {
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    border-color: rgba(255, 84, 84, 0.5);
+    transition: border-color 0.3s ease;
+
+}
+
+.content-pics {
+    padding: 10px 0;
+    display: inline-flex;
+    border-style: solid;
+    border-width: 10px 20px 10px 20px;
+    border-color: transparent;
+    border-radius: 15px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5vw;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+    /* For Internet Explorer and Edge */
+    scroll-snap-type: x mandatory;
+    
+    margin-bottom: 20px;
+}
+
+.content-pics::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Opera */
+}
+
+.part-content1 .left-arrow,
+.part-content2 .left-arrow,
+.part-content3 .left-arrow,
+.part-content1 .right-arrow,
+.part-content2 .right-arrow,
+.part-content3 .right-arrow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 50px;
+    border-radius: 20px;
+    z-index: 800;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.part-content1 .left-arrow,
+.part-content2 .left-arrow,
+.part-content3 .left-arrow {
+    left: 2px;
+    top: 50%;
+}
+
+.part-content1 .right-arrow,
+.part-content2 .right-arrow,
+.part-content3 .right-arrow {
+    right: 2px;
+    top: 50%;
+}
+
+.part .part-content1:hover .left-arrow,
+.part .part-content2:hover .left-arrow,
+.part .part-content3:hover .left-arrow,
+.part .part-content1:hover .right-arrow,
+.part .part-content2:hover .right-arrow,
+.part .part-content3:hover .right-arrow {
+    opacity: 0.5;
+}
+
+.part-content1 .left-arrow svg,
+.part-content2 .left-arrow svg,
+.part-content3 .left-arrow svg,
+.part-content1 .right-arrow svg,
+.part-content2 .right-arrow svg,
+.part-content3 .right-arrow svg {
+    fill: rgb(255, 255, 255);
+}
+
+.home-content .home-img-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /*scroll-snap-align: start;*/
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.home-content .content-pics img {
+    width: clamp(225px, 20vw, 400px);
+    border-radius: 15px;
+}
+
+.home-content .home-img-con .img-mask {
+    position: absolute;
+    border-radius: 0 0 15px 15px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 120px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: bottom 0.3s ease;
+    backdrop-filter: blur(3px);
+}
+
+.home-content .home-img-con .img-mask p {
+    font-family: Arial;
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.home-img-con:last-of-type {
+    margin-right: 20px;
+}
+
+.home-img-con:first-of-type {
+    margin-left: 20px;
+}
+
+
+@media(max-width: 1023px) {
+    .part .part-content1 .left-arrow,
+    .part .part-content2 .left-arrow,
+    .part .part-content3 .left-arrow,
+    .part .part-content1 .right-arrow,
+    .part .part-content2 .right-arrow,
+    .part .part-content3 .right-arrow {
+        display: none;
+    }
+    .home-content {
+        margin-top: 0;
+    }
+}

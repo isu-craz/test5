@@ -1,0 +1,125 @@
+.whatsapp-btn {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    bottom: -5px;
+    right: 20px;
+    z-index: 1500;
+}
+
+.whatsapp-btn a {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.whatsapp-btn a p {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    background-color: rgba(37, 211, 101, 0.5);
+    backdrop-filter: blur(8px);
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 1px 0 1px;
+    border-radius: 10px 10px 0 0;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+
+}
+
+.whatsapp-btn a p:hover {
+    background-color: rgb(37, 211, 102);
+    border-color: rgb(37, 211, 102);
+    color: white;
+
+}
+
+.whatsapp-btn a p svg {
+    margin-right: 5px;
+    position: relative;
+    bottom: -3px;
+    transition: fill 0.3s ease;
+}
+
+.whatsapp-btn a p:hover svg {
+    fill: white;
+}
+
+
+
+@media(max-width: 767px) {
+
+    .whatsapp-btn {
+        bottom: 5px;
+    }
+
+    .whatsapp-btn a p {
+        border-width: 0.15vw;
+        word-spacing: -0.16vw;
+        border-radius: 50px;
+        font-size: clamp(12px, 2.5vw, 16px);
+        padding: clamp(5px, 0.8vw, 11px);
+    }
+
+    .whatsapp-btn a p svg {
+        margin-right: 2px;
+    }
+}
+
+
+@media(max-width: 559px) {
+    .whatsapp-btn {
+        right: 5px;
+        bottom: 5px;
+    }
+
+    .whatsapp-btn a p svg {
+        bottom: -2px;
+        height: 18px;
+        width: 18px;
+    }
+}
+
+
+
+
+
+/*     ---------------------------------------------------     */
+
+
+.current-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20%;
+    left: 0;
+    width: auto;
+    background-color: rgba(255, 0, 0, 0.6);
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    
+    font-size: clamp(12px, 1.3vw, 16px);
+    z-index: 1200;
+    transition: transform 0.3s ease;
+    border-style: none;
+    border-radius: 0 0 20px 20px;
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    display: inline-block;
+    backdrop-filter: blur(8px);
+   padding: clamp(3px, 0.9vw, 6px) clamp(10px, 4vh, 40px);
+}
+
+
+.current-status p {
+    /*font-family: "Montserrat", serif;*/
+    letter-spacing: 2px;
+}
